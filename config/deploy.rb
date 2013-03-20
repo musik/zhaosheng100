@@ -29,12 +29,13 @@ namespace :deploy do
   end
   task :update do
      run <<-CMD
-      rm -rf hack
-      git clone git://github.com/musik/destoon-hack.git hack
-      cp -r hack/* ./
-      rm -rf hack
-      git clone git://github.com/musik/zhaosheng100.git hack
-      cp -r hack/* ./
+      cd #{deploy_to};
+      rm -rf hack;
+      git clone git://github.com/musik/destoon-hack.git hack;
+      cp -r hack/* ./;
+      rm -rf hack1;
+      git clone git://github.com/musik/zhaosheng100.git hack1;
+      cp -r hack1/* ./;
      CMD
   end
 end

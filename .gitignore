@@ -1,7 +1,4 @@
-404.php
-admin.php
 archiver
-city.php
 down
 feed
 guestbook
@@ -13,7 +10,6 @@ sitemap
 spread
 video
 about
-ajax.php
 baidunews.xml
 comment
 exhibit
@@ -32,13 +28,11 @@ brand
 common.inc.php
 extend
 gift
-index.php
 know
 mall
 photo
 search.php
 skin/default/
-upload.php
 wap
 admin
 api
@@ -53,4 +47,3 @@ poll
 sell
 special
 version.inc.php
-xuexiao
