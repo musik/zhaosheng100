@@ -1,4 +1,4 @@
-set :application, "zhaosheng100"
+set :application, "zhaosheng"
 set :repository,  "git@github.com:musik/zhaosheng100.git"
 
 set :servar_name,"rho4"
@@ -7,6 +7,7 @@ role :app, "rho4"                          # This may be the same as your `Web` 
 role :db,  "rho4", :primary => true # This is where Rails migrations will run
 
 set :user,'muzik'
+set :deploy_to, "/home/#{user}/#{application}"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
@@ -22,3 +23,18 @@ set :user,'muzik'
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+namespace :deploy do
+  task :setup do
+    #run "mkdir -p #{deploy_to}"
+  end
+  task :update do
+     run <<-CMD
+      rm -rf hack
+      git clone git://github.com/musik/destoon-hack.git hack
+      cp -r hack/* ./
+      rm -rf hack
+      git clone git://github.com/musik/zhaosheng100.git hack
+      cp -r hack/* ./
+     CMD
+  end
+end
