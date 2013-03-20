@@ -1,0 +1,14 @@
+{php $cats = get_maincat(0, $mid, 1);}
+<ul class="cats">
+{loop $cats $i $c}
+<li>
+{if $c[item] > 0 }
+<a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}" target="{$target}" title="{$c[catname]}">{set_style($c[catname], $c[style])}</a>
+<span class="f_gray px10">{$c[item]}</span>
+{else}
+<span class="f_gray">{$c[catname]}</span>
+{/if}
+</li>
+{/loop}
+</ul>
+      <div class="c_b"></div>

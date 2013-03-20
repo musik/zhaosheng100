@@ -1,0 +1,33 @@
+{template 'header'}
+<DIV class=m>
+  <DIV class="m_l f_l">
+    <!--专业分类-->
+    <div class="box_head_1"><div><strong>专业分类</strong></div></div>
+    <DIV class="box_body catalog">
+      {php $mid = 22;}
+      {template 'catalog-list', 'chip'}
+    </DIV>
+    <DIV class=b10></DIV>
+    <!--/专业分类-->
+    <!--最新专业-->
+    <div class="box_head_1"><div><strong>最热专业</strong></div></div>
+    <div class="box_body">
+      <div class="">
+        <!--{tag("moduleid=22&condition=status=3 and addtime>$today_endtime-180*86400&areaid=$cityid&order=hits desc&pagesize=".$DT[page_mall]."&datetype=2&template=list-zy-full&target=_blank&showcat=1", -2)}-->
+      </div>
+    </div>
+    <DIV class=b10></DIV>
+    <!--/最新专业-->
+  </DIV>
+  <DIV class="m_n f_l"></DIV>
+  <DIV class="m_r f_r">
+    <!--最新学校-->
+    <DIV class=box_head><span class="f_r"><a href="{$MODULE[4][linkurl]}">更多..</a></span><STRONG>最新学校</STRONG></DIV>
+    <DIV class="box_body li_dot">
+      <!--{tag("moduleid=4&condition=groupid>5 and catids<>''&areaid=$cityid&pagesize=15&order=userid desc&template=list-com")}-->
+    </DIV>
+    <!--/最新学校-->
+  </DIV>
+
+</DIV>
+{template 'footer'}

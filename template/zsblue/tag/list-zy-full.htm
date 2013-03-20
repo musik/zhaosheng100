@@ -1,0 +1,26 @@
+<table class="itable" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+  <tr >
+    <th>专业名称</th>
+    <th>学校</th>
+    <th>所属分类</th>
+    <th>招生类别</th>
+    <th>招生对象</th>
+    <th>专业类别</th>
+    <th>学制</th>
+   </tr>
+  </thead>
+  {loop $tags $i $t}
+  <tr{if $i%2!=0} class="even"{/if}>
+ <td><a title="{$t[company]} - {$t[title]}" href="{$t[linkurl]}"{if $target} target="{$target}"{/if}{if $class} class="{$class}"{/if} title="{$t[alt]}">{$t[title]}</a></td>
+<td><a rel="nofollow" href="{userurl($t[username])}" target="{$target}">{$t[company]}</a></td>
+<td><a href="{$t[caturl]}" rel="nofollow">{$t[catname]}</a></td>
+<td>{$t[zhaoshengleibie]}</td>
+<td>{$t[zhaoshengduixiang]}</td>
+<td>{$t[zhuanyeleibie]}</td>
+<td>{$t[xuezhi]}年</td>
+
+  </tr>
+  {/loop}
+</table>
+{if $showpage && $pages}<div class="pages">{$pages}</div>{/if}

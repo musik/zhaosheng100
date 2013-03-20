@@ -1,0 +1,9 @@
+<ul>
+  {loop $tags $i $t}
+  <li>
+  <a title="{$t[company]} - {$t[title]}" href="{$t[linkurl]}"{if $target} target="{$target}"{/if}{if $class} class="{$class}"{/if} title="{$t[alt]}">{$t[title]}</a>
+  - <a rel="nofollow" href="{userurl($t[username])}" target="{$target}">{$t[company]}</a>
+  </li>
+  {/loop}
+</ul>
+{if $showpage && $pages}<div class="pages">{$pages}</div>{/if}

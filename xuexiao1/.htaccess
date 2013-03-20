@@ -1,0 +1,7 @@
+# Destoon B2B Rewrite Rules
+ErrorDocument 404 /404.php
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([a-z0-9_\-]+)/([a-z]+)/(.*)\.shtml$ index.php?homepage=$1&file=$2&rewrite=$3
+RewriteRule ^([a-z0-9_\-]+)/([a-z]+)([/])?$ index.php?homepage=$1&file=$2
+RewriteRule ^([a-z0-9_\-]+)([/])?$ index.php?homepage=$1
